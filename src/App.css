@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+    --color-primary-green: #495D56;
+    --color-primary-yellow: #F4CD14;
+    --color-secondary-coral: #EE9972;
+
+    --font-serif: "Markazi Text", serif;
+    --font-sans: "Karla", sans-serif;
+}
+
+@layer components {
+    .h1 {
+        font-family: var(--font-serif);
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--color-primary-yellow);
+    }
+    .h3 {
+        font-family: var(--font-serif);
+        font-size: 1.5rem;
+        font-weight: 700
+    }
+    .h4 {
+        font-family: var(--font-serif);
+        font-size: 1.25rem;
+        font-weight: 700;
+    }
+
+    .button {
+        font-family: var(--font-sans);
+        font-size: 1rem;
+        background-color: var(--color-primary-yellow);
+        padding: 0.5rem 1.5rem;
+        border-radius: 16px;
+        border: none;
+        cursor: pointer;
+    }
+}

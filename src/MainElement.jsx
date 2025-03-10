@@ -10,24 +10,24 @@ const recipes = [
         id: 1,
         title: "Greek Salad",
         description: "The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.",
-        price: 12.99,
+        price: "12.99",
         image: GreekSalad
     },
     {
         id: 2,
         title: "Bruchetta",
         description: "Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil.",
-        price: 5.99,
+        price: "5.99",
         image: Bruchetta
     },
     {
         id: 3,
         title: "Lemon Dessert",
         description: "This comes straight from grandma's recipe book, every last ingredient has been sourced and is as authentic as can be imagined.",
-        price: 5.00,
+        price: "5.00",
         image: LemonDessert
     }
-  ];
+];
 
 export default function Main() {
     return (
@@ -35,7 +35,7 @@ export default function Main() {
             <div className="grid grid-cols-12 gap-4 p-4 items-start bg-primary-green">
                 <div className="md:col-start-3 md:col-span-3 col-start-1 col-span-12 flex flex-col h-full">
                     <div>
-                        <h1 className="h1">Little Lemon</h1>
+                        <h1 className="h1 text-primary-yellow mb-0">Little Lemon</h1>
                         <h3 className="h3 text-white">Chicago</h3>
                         <p className="font-sans text-white">We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
                     </div>

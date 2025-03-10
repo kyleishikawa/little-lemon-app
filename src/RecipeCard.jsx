@@ -2,7 +2,7 @@ import { MdDeliveryDining } from 'react-icons/md';
 
 export default function RecipeCard({ title, description, price, image }) {
     return (
-        <div className="bg-gray-100 rounded-lg overflow-hidden flex flex-col h-full">
+        <div className="bg-highlight-grey rounded-lg overflow-hidden flex flex-col h-full">
             <img
                 src={image}
                 alt={title}
@@ -14,7 +14,7 @@ export default function RecipeCard({ title, description, price, image }) {
                     <span className="text-secondary-coral">${price}</span>
                 </div>
                 <p className="mb-auto">{description}</p>
-                <button className="mt-6 text-left flex items-center">
+                <button className="mt-6 text-left flex items-center cursor-pointer hover:text-primary-green">
                     <span>Order a delivery</span>
                     <MdDeliveryDining className="ml-2 text-2xl" />
                 </button>

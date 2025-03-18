@@ -22,7 +22,7 @@ const fetchAPI = function(date) {
     return result;
 };
 
-const submitAPI = function() {
+const submitAPI = function(fromData) {
     return true;
 };
 

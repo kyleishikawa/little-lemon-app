@@ -51,7 +51,11 @@ export default function BookingForm({ availableTimes, updateTimes }) {
         },
     });
 
-    // Remove the problematic useEffect
+    // Function to handle making a new reservation
+    const handleNewReservation = () => {
+        setIsSubmitted(false);
+        formik.resetForm(); // Reset the formik form completely
+    };
 
     if (isSubmitted) {
         return (
@@ -60,7 +64,8 @@ export default function BookingForm({ availableTimes, updateTimes }) {
                 <p className="mt-4">Thank you for your reservation. We look forward to seeing you on {formik.values.date} at {formik.values.time}.</p>
                 <button
                     className="button mt-6"
-                    onClick={() => setIsSubmitted(false)}
+                    onClick={handleNewReservation}
+                    aria-label="Make another reservation"
                 >
                     Make another reservation
                 </button>
@@ -158,7 +163,8 @@ export default function BookingForm({ availableTimes, updateTimes }) {
                     <button
                         type="submit"
                         className="button text-black"
-                        disabled={formik.isSubmitting}
+                        disabled={!formik.isValid || formik.isSubmitting}
+                        aria-label="Submit reservation request"
                     >
                         {formik.isSubmitting ? 'Submitting...' : 'Submit Reservation'}
                     </button>

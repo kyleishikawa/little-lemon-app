@@ -8,22 +8,21 @@ import Main from './MainElement.jsx'
 import Footer from './Footer.jsx'
 import BookingPage from './BookingPage.jsx'
 
+export const availableTimesReducer = (state, action) => {
+  switch(action.type) {
+    case 'UPDATE_TIMES':
+      return fetchAPI(new Date(action.payload));
+    default:
+      return state;
+  }
+};
+
+export const initializeTimes = () => {
+  // Initialize with today's date
+  return fetchAPI(new Date());
+};
+
 export default function App() {
-  const availableTimesReducer = (state, action) => {
-    switch(action.type) {
-      case 'UPDATE_TIMES':
-        // Here you use fetchAPI with the date
-        return fetchAPI(new Date(action.payload));
-      default:
-        return state;
-    }
-  };
-
-  const initializeTimes = () => {
-    // Initialize with today's date
-    return fetchAPI(new Date());
-  };
-
   const [availableTimes, dispatch] = useReducer(availableTimesReducer, [], initializeTimes);
 
   const updateTimes = (dateString) => {
